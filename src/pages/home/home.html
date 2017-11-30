@@ -3,16 +3,26 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Home</ion-title>
+    <ion-title>{{ pageTitle }}</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <h3>Ionic Menu Starter</h3>
+  <p style="text-align:center">広告を投稿する</p>
 
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
-  </p>
+  <form (submit)="doSubmit()">
+    <ion-item>
+      <ion-label>タイトル</ion-label>
+      <ion-input type="text" required [(ngModel)]="adInfo.title" name="title"></ion-input>
+    </ion-item>
 
-  <button ion-button secondary menuToggle>Toggle Menu</button>
+    <ion-item>
+      <ion-label>内容</ion-label>
+      <ion-textarea required [(ngModel)]="adInfo.contents" name="contents"></ion-textarea>
+    </ion-item>
+
+    <div padding>
+      <button ion-button color="primary" block>投稿する</button>
+    </div>
+  </form>
 </ion-content>
