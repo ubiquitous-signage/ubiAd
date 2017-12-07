@@ -47,9 +47,10 @@ export class HomePage {
   }
 
   _confirm() {
+    const amount = this.adInfo.contents.length / 100
     const alert = this.alertCtrl.create({
       title: '確認',
-      message: '本当に投稿しますか？',
+      message: `<p>掲載料は <b>${amount} UTC</b> です。</p><p>本当に投稿しますか？</p>`,
       buttons: [
         {
           text: 'キャンセル',
