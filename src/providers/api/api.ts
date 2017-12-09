@@ -3,7 +3,8 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class Api {
-  url: string = 'http://localhost:9000/api';
+  // url: string = 'http://localhost:9000/api';
+  url: string = 'http://35.200.70.212:9000/api';
 
   constructor(public http: HttpClient) {}
 
